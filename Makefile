@@ -4,4 +4,4 @@
 
 .PHONY: repro
 repro: .bootstrapped
-	gunicorn
+	python no-gunicorn.py
