@@ -14,4 +14,4 @@ monkey.patch_all()
 
 # Step 3: import the app and go to town.
 import hello
-hello.app.run()
+hello.main()

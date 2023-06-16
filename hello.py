@@ -1,7 +1,5 @@
-from flask import Flask
-from urllib3.util.ssl_ import SSLContext  # TODO: <<< look into urllib3 1.x vs 2.x >>>
+from urllib3.util.ssl_ import SSLContext
 from urllib3.util.ssl_ import OP_NO_SSLv2
-app = Flask(__name__)
 
 def create_urllib3_context():
     context = SSLContext()
@@ -11,11 +9,10 @@ def create_urllib3_context():
     options |= OP_NO_SSLv2
     context.options |= options
 
-context = create_urllib3_context()
-
-@app.route("/")
-def hello():
-    return "hello, world!"
+def main():
+    print("About to create a urllib3 context")
+    context = create_urllib3_context()
+    print(f"How about that context, eh? {context}")
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    main()
