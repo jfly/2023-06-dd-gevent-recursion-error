@@ -4,4 +4,4 @@
 
 .PHONY: repro
 repro: .bootstrapped
-	python repro.py
+	URLLIB3=1 python repro.py
